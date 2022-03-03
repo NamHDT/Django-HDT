@@ -43,16 +43,10 @@
         <tr>
             <th>created_at</th>
             <th>shop_site</th>
-            <th>order</th>
-            <th>line_item_order_id</th>
-            <th>fulfillment_status</th>
-            <th>title</th>
-            <th>image_src</th>
-            <th>product_id</th>
-            <th>quantity</th>
-            <th>price</th>
-            <th>sku</th>
-            <th>vender</th>
+            <th>orderId</th>
+            <th>total_price</th>
+            <th>city</th>
+            <th>number_line_item</th>
         </tr>
     </thead>
     <tbody>
@@ -60,16 +54,10 @@
         <tr>
             <td>{{i.created_at}}</td>
             <td>{{i.shop_site}}</td>
-            <td>{{i.order}}</td>
-            <td>{{i.line_item_order_id}}</td>
-            <td>{{i.fulfillment_status}}</td>
-            <td>{{i.title}}</td>
-            <td><img src={{i.image_src}} alt={{i.product_id}} style="width:80px;height:80px;"></td>
-            <td>{{i.product_id}}</td>
-            <td>{{i.quantity}}</td>
-            <td>{{i.price}}</td>
-            <td>{{i.sku}}</td>
-            <td>{{i.vender}}</td>
+            <td>{{i.orderId}}</td>
+            <td>{{i.total_price}}</td>
+            <td>{{i.city}}</td>
+            <td>{{i.number_line_item}}</td>
         {% endfor %}
         </tr>
     </tbody>

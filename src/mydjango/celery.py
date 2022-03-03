@@ -17,3 +17,7 @@ app.autodiscover_tasks()
 def debug_task(self):
     print('Request: {0!r}'.format(self.request))
 
+
+@app.task
+def hello():
+    print(" xin chao")

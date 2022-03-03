@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from celery.schedules import crontab
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -93,7 +94,7 @@ DATABASES = {
         'PORT': os.environ.get("DB_PORT"),
     }
 }
-
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -168,6 +169,13 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+
+CELERY_BEAT_SCHEDULE = {
+    "update_vnexpress": {
+        "task": "orders.tasks.get_data_vnexpress",
+        "schedule": crontab(),
+    }
+}
 
 
 REST_FRAMEWORK = {

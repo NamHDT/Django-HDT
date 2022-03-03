@@ -12,9 +12,9 @@ class Team(models.Model):
 class Group(models.Model):
     title_group = models.CharField(max_length=255)
 
-
     def __str__(self):
-        return self.title_team
+        return self.title_group
+
 
 class Accounts(models.Model):
     accounts_fullname = models.CharField(max_length=200)
